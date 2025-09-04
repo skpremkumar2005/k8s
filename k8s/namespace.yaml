@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: browser-platform
+  labels:
+    name: browser-platform
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: browser-platform-quota
+  namespace: browser-platform
+spec:
+  hard:
+    requests.cpu: "20"
+    requests.memory: 40Gi
+    limits.cpu: "40"
+    limits.memory: 80Gi
+    pods: "50"
